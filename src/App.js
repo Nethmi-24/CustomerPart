@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React, {Component} from 'react'
+import Form from './CustomerPages/form/Custform';
+import { Routes,Route,NavLink,BrowserRouter } from 'react-router-dom';
+import Dashboard from './CustomerPages/dashboard/dashboard.js';
+import Profile from './CustomerPages/profile/profile';
+import Editprofile from './CustomerPages/profile/editprofile';
+import GameDetail from './CustomerPages/gamedetails/gamedetail';
+import Cuspayment from './CustomerPages/payment/Cuspayment';
+import ViewAd from './CustomerPages/adcollection/viewAd';
+class App extends Component {
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+   
+      <BrowserRouter>
+      <header>
+        <nav>
+        <NavLink to="/Form">Form</NavLink><br></br>
+        <NavLink to="/Dashboard">DB</NavLink><br></br>
+        <NavLink to="/Profile">Profile</NavLink><br></br>
+        <NavLink to="/GameDetail">Game Details</NavLink><br></br>
+        <NavLink to="/ViewAd">View Ad</NavLink><br></br>
+        </nav>
       </header>
-    </div>
+      <main>
+        <Routes>
+          <Route path="/Form" index element={<Form/>}/>
+          <Route path="/Dashboard" index element={<Dashboard/>}/>
+          <Route path="/Profile" index element={<Profile/>}/>
+          <Route path="/Editprofile" index element={<Editprofile/>}/>
+          <Route path="/GameDetail" index element={<GameDetail/>}/>
+          <Route path="/Cuspayment" index element={<Cuspayment/>}/>
+          <Route path="/ViewAd" index element={<ViewAd/>}/>
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
+}
 }
 
 export default App;

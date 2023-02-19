@@ -1,0 +1,12 @@
+.pendingAds{
+    margin-left: 600px;
+    margin-top: 50px;
+}
+
+.hr{
+    background: 'green';
+    color: 'green';
+    borderColor: 'green';
+    height: '1px';
+    width:'395%'
+  }
